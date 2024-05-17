@@ -31,6 +31,7 @@
     "apollo-server-koa": "^3.13.0",
     "bcrypt": "^5.1.1",
     "bull": "^4.12.4",
+    "dotenv": "^16.4.5",
     "graphql": "^16.8.1",
     "http": "^0.0.1-security",
     "jsonwebtoken": "^9.0.2",
