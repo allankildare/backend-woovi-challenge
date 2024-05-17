@@ -1,24 +1,14 @@
 import http from 'http'
 import Koa from 'koa'
-import Router from '@koa/router'
+import dotenv from 'dotenv'
 import bodyParser from 'koa-bodyparser'
 import cors from '@koa/cors'
 import { ApolloServer } from '@apollo/server'
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer'
-import mongoose from 'mongoose'
 import { koaMiddleware } from '@as-integrations/koa'
+import { typeDefs, resolvers } from './graphql/schema'
 
-const typeDefs = `#graphql
-  type Query {
-    hello: String
-  }
-`
-
-const resolvers = {
-  Query: {
-    hello: () => 'world',
-  },
-}
+dotenv.config()
 
 const app = new Koa()
 const httpServer = http.createServer(app.callback())
@@ -29,6 +19,7 @@ const server = new ApolloServer({
   resolvers,
   plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
 })
+
 await server.start()
 
 app.use(cors())
