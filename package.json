@@ -5,8 +5,9 @@
   "main": "index.js",
   "author": "Allan Kildare",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "dev": "node ./src/server.mjs"
+    "dev": "tsx ./src/server.mts"
   },
   "private": false,
   "devDependencies": {
@@ -20,6 +21,7 @@
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
+    "tsx": "^4.10.3",
     "typescript": "^5.4.5"
   },
   "dependencies": {
