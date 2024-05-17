@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ESNext",
     "module": "ESNext",
+    "moduleResolution": "node",
     "outDir": "./dist",
     "rootDir": "./src",
-    "moduleResolution": "node",
     "strict": true,
-    "esModuleInterop": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": false,
+    "esModuleInterop": true,
+    "strictPropertyInitialization": true,
+    "lib": ["esnext"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.test.ts"]
